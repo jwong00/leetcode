@@ -35,8 +35,6 @@ public class Solution {
         System.out.println(i++ +" "+s.isValid("()"));
         System.out.println(i++ +" "+s.isValid("("));
 
-
-
     }
 
     public boolean isValid(String s) {
@@ -49,44 +47,6 @@ public class Solution {
         }
         if(!p.isEmpty()) return false;
         else return true;
-    }
-    /*public boolean isValid(String s) {
-        Stack<Character> p = new Stack<>();
-
-        if(isClose(s.charAt(0))) return false;
-
-        for(int i=0; i<s.length(); i++) {
-            if(!isParen(s.charAt(i))) return false;
-
-            if(isOpen(s.charAt(i))) p.push(s.charAt(i)); //add
-            else if(isClose(s.charAt(i))) {
-                if(p.isEmpty()) return false;
-                if(!isPair(p.peek(),s.charAt(i))) return false;
-                else p.pop();
-            }
-        }
-        if(p.isEmpty()) return true;
-        else return false;
-    }*/
-
-    public boolean isPair(Character first ,Character second) {
-        if     (first=='(' && second==')') return true;
-        else if(first=='[' && second==']') return true;
-        else if(first=='{' && second=='}') return true;
-        else                               return false;
-    }
-
-    public boolean isOpen(Character c) {
-        if(openParens.contains(c)) return true;
-        else return false;
-    }
-    public boolean isClose(Character c) {
-        if(closeParens.contains(c)) return true;
-        else return false;
-    }
-    public boolean isParen(Character c) {
-        if(openParens.contains(c) || closeParens.contains(c)) return true;
-        else return false;
     }
 
 }
