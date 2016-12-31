@@ -21,23 +21,36 @@ public class Solution {
     }
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.isValid("()!"));
-        System.out.println(s.isValid("()()()[]{}{}{}"));
-        System.out.println(s.isValid("((()))"));
-        System.out.println(s.isValid("([)]"));
-        System.out.println(s.isValid("[{)])()({}]["));
-        System.out.println(s.isValid("[]"));
-        System.out.println(s.isValid("{})"));
-        System.out.println(s.isValid("}{"));
-        System.out.println(s.isValid(")("));
-        System.out.println(s.isValid("]["));
-        System.out.println(s.isValid("()"));
-        System.out.println(s.isValid("("));
+        int i=1;
+        System.out.println(i++ +" "+s.isValid("()!"));
+        System.out.println(i++ +" "+s.isValid("()()()[]{}{}{}"));
+        System.out.println(i++ +" "+s.isValid("((()))"));
+        System.out.println(i++ +" "+s.isValid("([)]"));
+        System.out.println(i++ +" "+s.isValid("[{)])()({}]["));
+        System.out.println(i++ +" "+s.isValid("[]"));
+        System.out.println(i++ +" "+s.isValid("{})"));
+        System.out.println(i++ +" "+s.isValid("}{"));
+        System.out.println(i++ +" "+s.isValid(")("));
+        System.out.println(i++ +" "+s.isValid("]["));
+        System.out.println(i++ +" "+s.isValid("()"));
+        System.out.println(i++ +" "+s.isValid("("));
 
 
 
     }
+
     public boolean isValid(String s) {
+        Stack<Character> p = new Stack<>();
+        for(int i=0; i<s.length(); i++) {
+            if(s.charAt(i)=='(') p.push(')');
+            else if(s.charAt(i)=='[') p.push(']');
+            else if(s.charAt(i)=='{') p.push('{');
+            else if(p.isEmpty() || s.charAt(i) != p.pop()) return false;
+        }
+        if(!p.isEmpty()) return false;
+        else return true;
+    }
+    /*public boolean isValid(String s) {
         Stack<Character> p = new Stack<>();
 
         if(isClose(s.charAt(0))) return false;
@@ -54,7 +67,7 @@ public class Solution {
         }
         if(p.isEmpty()) return true;
         else return false;
-    }
+    }*/
 
     public boolean isPair(Character first ,Character second) {
         if     (first=='(' && second==')') return true;
