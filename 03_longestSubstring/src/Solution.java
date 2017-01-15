@@ -10,15 +10,16 @@ public class Solution {
         Solution s = new Solution();
         System.out.println(s.lengthOfLongestSubstring("abcabcbb"));
         System.out.println(s.lengthOfLongestSubstring("kdablmajkr"));
-        System.out.println(s.lengthOfLongestSubstring(""));
+        System.out.println(s.lengthOfLongestSubstring("aab"));
         System.out.println(s.lengthOfLongestSubstring("c"));
         System.out.println(s.lengthOfLongestSubstring("abd"));
+        System.out.println(s.lengthOfLongestSubstring("ggububgvfk"));
+
     }
 
     //begin search from arbitrary char c, until a dupe is found
     //start new search from just after first instance of dupe.
     public int lengthOfLongestSubstring(String s) {
-//        HashSet<Character> charSet = new HashSet<>();
         HashMap<Character,Integer> charSet = new HashMap<>();
         int longestSubStrLength=0;
         int curSubStrLength=0;
@@ -28,13 +29,21 @@ public class Solution {
             if(k==null) {
                 charSet.put(s.charAt(i),i); //character is new; add to hash
                 curSubStrLength++;
+
+//                System.out.println("Adding " + s.charAt(i) + " "+i+" "+curSubStrLength);
+
             }
-            else {
+            else { //character has been seen before. go back?
+//                System.out.println(s.charAt(i) + " is a dupe at " + i);
+//                System.out.println("Resetting");
+                i=k;
+//                System.out.println(i);
                 charSet = new HashMap<>();
                 if(curSubStrLength >= longestSubStrLength) {
                     longestSubStrLength = curSubStrLength;
-                    curSubStrLength = 0;
                 }
+
+                curSubStrLength = 0;
             }
         }
         if(curSubStrLength >= longestSubStrLength) longestSubStrLength = curSubStrLength;
