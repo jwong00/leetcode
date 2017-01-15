@@ -8,15 +8,16 @@ public class Solution {
         System.out.println(s.countAndSay(6));
     }
     public String countAndSay(int n) {
-        int v=1;
+        String v="1";
+
         while(n>1) {
             v=next(v);
             n--;
         }
-        return Integer.toString(v);
+        return v;
     }
-    public int next(int k) {
-        String s = Integer.toString(k);
+    public String next(String k) {
+        String s = k;
         int count=1;
         String next="";
         Character c = s.charAt(0); //get first char to start
@@ -35,6 +36,6 @@ public class Solution {
         next+=count;
         next+=c;
 
-        return Integer.parseInt(next);
+        return next;
     }
 }
