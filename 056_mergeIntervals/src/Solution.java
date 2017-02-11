@@ -30,16 +30,19 @@ public class Solution {
          * 3. intervals are disjoint (no merging)
          * */
 
-        int i=0;
-        while(i <= intervals.size()-2) {
+        int i=0,j=0;
+        while(i <= intervals.size()-1) {
             pre = intervals.get(i);
-            cur = intervals.get(i+1);
-            if(pre.end >= cur.start && cur.end >= pre.start) {
-                pre.start = Math.min(pre.start,cur.start);
-                pre.end = Math.max(pre.end,cur.end);
-                intervals.remove(i+1);
+            j=i+1;
+            while(j<=intervals.size()-1) {
+                cur = intervals.get(j);
+                if (pre.end >= cur.start && cur.end >= pre.start) {
+                    pre.start = Math.min(pre.start, cur.start);
+                    pre.end = Math.max(pre.end, cur.end);
+                    intervals.remove(j);
+                } else j++; //increment only if not removed
             }
-            else i++;
+            i++;
         }
 
         return intervals;
