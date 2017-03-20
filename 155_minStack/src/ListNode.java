@@ -3,11 +3,11 @@
  */
 public class ListNode {
     int val;
-    ListNode pre;
+//    ListNode pre;
     ListNode next;
     public ListNode(int x) {
         val=x;
-        pre=null;
+//        pre=null;
         next=null;
     }
 }
