@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1fa82769-69ba-4b83-936e-5de5c188d95a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WUWTEssvHVTAkD1OaPQCtC7cWt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="C:/Program Files/jdk-13.0.2" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution" />
+      <module name="675_golfTrees" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Solution" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="182" key="#Project_Structure" timestamp="1579204671745">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="555" y="182" key="#Project_Structure/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579204671745" />
+    <state x="811" y="413" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579206793651">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="811" y="413" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579206793651" />
+    <state x="543" y="179" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1579204739756">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="543" y="179" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579204739756" />
+    <state x="629" y="335" key="FileChooserDialogImpl" timestamp="1579649810262">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="629" y="335" key="FileChooserDialogImpl/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579649810262" />
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1579297365547">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579297365547" />
+    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1579297365547">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1877" height="283" key="GridCell.Tab.0.center/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579297365547" />
+    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1579297365547">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1877" height="283" key="GridCell.Tab.0.left/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579297365547" />
+    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1579297365547">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1877" height="283" key="GridCell.Tab.0.right/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579297365547" />
+    <state x="435" y="177" key="SettingsEditor" timestamp="1579281563073">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="435" y="177" key="SettingsEditor/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579281563073" />
+    <state x="660" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1579649790314">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="660" y="348" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579649790314" />
+    <state x="345" y="144" key="new project wizard" timestamp="1579649811946">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="345" y="144" key="new project wizard/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579649811946" />
+  </component>
+</project>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b34498e-6f2d-474e-8830-6f592fa708d4" name="Default" comment="" />
+    <list default="true" id="63a2986b-24ed-481f-8bab-a0e50359873b" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,7 +11,7 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FavoritesManager">
-    <favorites_list name="002_addTwoNumbers" />
+    <favorites_list name="480_LFUCache" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -20,29 +20,32 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1TD2gVHsrJEN26nqiR9qw6yP7t3" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectId" id="1X5RLXoPUNvePLlvhi6XecOXhQZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <module />
+      <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -50,9 +53,9 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Solution" />
-      <module name="002_addTwoNumbers" />
+    <configuration name="LFUCache" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LFUCache" />
+      <module name="480_LFUCache" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,7 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.LFUCache" />
       </list>
     </recent_temporary>
   </component>
@@ -140,22 +143,17 @@
       <collection />
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="742" y="265" key="FileChooserDialogImpl" timestamp="1579206703205">
+    <state x="443" y="98" key="SettingsEditor" timestamp="1580333976412">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="742" y="265" key="FileChooserDialogImpl/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579206703205" />
-    <state x="443" y="98" key="SettingsEditor" timestamp="1579206621255">
+    <state x="443" y="98" key="SettingsEditor/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1580333976412" />
+    <state x="345" y="144" key="new project wizard" timestamp="1580345974373">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="443" y="98" key="SettingsEditor/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579206621255" />
-    <state x="631" y="351" key="com.intellij.ide.util.TipDialog" timestamp="1579205765538">
-      <screen x="0" y="0" width="1920" height="1044" />
-    </state>
-    <state x="631" y="351" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579205765538" />
-    <state x="345" y="144" key="new project wizard" timestamp="1579204659399">
-      <screen x="0" y="0" width="1920" height="1044" />
-    </state>
-    <state x="345" y="144" key="new project wizard/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1579204659399" />
+    <state x="345" y="144" key="new project wizard/-1920.0.1920.1044/0.0.1920.1044@0.0.1920.1044" timestamp="1580345974373" />
   </component>
 </project>
