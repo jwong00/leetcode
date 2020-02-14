@@ -1,52 +1,65 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashMap;
 
-/**
- * Created by Glamdring on 2/9/2017.
- */
 public class Solution {
-    public static void main(String[] args) {
+
+    public static void main(String args[]) {
+        int[][] case1 = {{1,3},{2,6},{8,10},{15,18}};
+        int[][] case2 = {{0,2},{5,10},{11,13},{15,16},{6,10}};
+
         Solution s = new Solution();
-        ArrayList h = new ArrayList<Interval>();
-        h.add(new Interval(2,3));
-        h.add(new Interval(4,5));
-        h.add(new Interval(6,7));
-        h.add(new Interval(8,9));
-        h.add(new Interval(1,10));
-//        h.add(new Interval());+
-        System.out.println(s.merge(h));
+        System.out.println(Arrays.deepToString(s.merge(case1)));
+
+        System.out.println(Arrays.deepToString(s.merge(case2)));
 
     }
-    public List<Interval> merge(List<Interval> intervals) {
-        if(intervals.size()<2) return intervals;
+    public int[][] merge(int[][] intervals) {
+        int[][] k = new int[intervals.length][2];
+        int left = 0; //tracks the left-most interval of the set of intervals to return
 
-        Interval pre = intervals.get(0);
-        Interval cur;
+        System.out.println("Printing array to merge...");
+        System.out.println(Arrays.deepToString(intervals));
 
-        /* Cases
-         * 1. ending of either interval overlaps start of another interval
-         * 2. one interval contains second interval
-         * 3. intervals are disjoint (no merging)
-         * */
-
-        int i=0,j=0, k=0;
-        while(i <= intervals.size()-1) {
-            pre = intervals.get(i);
-            j=i+1;
-            k=j;
-            while(j<=intervals.size()-1) {
-                cur = intervals.get(j);
-                if (pre.end >= cur.start && cur.end >= pre.start) {
-                    pre.start = Math.min(pre.start, cur.start);
-                    pre.end = Math.max(pre.end, cur.end);
-                    intervals.remove(j);
-                    k=i;
-                } else  {
-                    j++; //increment only if not removed
+        for(int i=0; i<intervals.length-1;i++) {
+            for(int j=i+1;j<intervals.length;j++) {
+                if (overlap(intervals[i], intervals[j])) {
+                    intervals[j] = merge(intervals[i], intervals[j]);
+                    left++;
+//                    i=j;
+                    /*force i to "catch up" by one,
+                    since it's been merged with i+1, the original interval
+                    shouldn't be compared again*/
                 }
             }
-            i=k;
+
         }
-        return intervals;
+        System.out.println(Arrays.deepToString(intervals));
+
+
+        return Arrays.copyOfRange(intervals,left,intervals.length);
     }
+
+    //"low-level" merge for two intervals
+    private int[] merge(int[] interval1, int[] interval2) {
+        int[] interval = new int[2];
+        interval[0] = Math.min(interval1[0],interval2[0]);
+        interval[1] = Math.max(interval1[1],interval2[1]);
+        return interval;
+
+    }
+
+    public boolean overlap(int[] interval1, int[] interval2) {
+        //mutual exclusion
+        if(interval1[1] < interval2[0]) return false;
+        else if(interval2[1] < interval1[0]) return false;
+        //interval 1 within interval 2
+        else if(interval1[0] <= interval2[1] && interval1[0] >=interval2[0]) return true;
+        else if(interval1[1] <= interval2[1] && interval1[1] >=interval2[0]) return true;
+        //interval 2 within interval 1
+        else if(interval2[0] <= interval1[1] && interval2[0] >=interval1[0]) return true;
+        else if(interval2[1] <= interval1[1] && interval2[1] >=interval1[0]) return true;
+        else return false;
+    }
+
 }
