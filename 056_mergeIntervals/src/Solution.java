@@ -1,6 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class Solution {
 
@@ -15,29 +14,32 @@ public class Solution {
 
     }
     public int[][] merge(int[][] intervals) {
-        int[][] k = new int[intervals.length][2];
+        LinkedList<int[]> merged = new LinkedList<>();
+
+        //sort intervals here:
+
+        //
+
         int left = 0; //tracks the left-most interval of the set of intervals to return
 
         System.out.println("Printing array to merge...");
         System.out.println(Arrays.deepToString(intervals));
 
-        for(int i=0; i<intervals.length-1;i++) {
-            for(int j=i+1;j<intervals.length;j++) {
-                if (overlap(intervals[i], intervals[j])) {
-                    intervals[j] = merge(intervals[i], intervals[j]);
-                    left++;
-//                    i=j;
-                    /*force i to "catch up" by one,
-                    since it's been merged with i+1, the original interval
-                    shouldn't be compared again*/
-                }
+        System.out.println("Merging...");
+        for(int i=0; i<intervals.length;i++) {
+            if(merged.isEmpty() || merged.getLast()[1] < intervals[i][0]) {
+                merged.add(intervals[i]);
             }
-
+            else {
+                merged.set(merged.indexOf(merged.getLast()),merge(merged.getLast(),intervals[i]));
+            }
         }
-        System.out.println(Arrays.deepToString(intervals));
+        System.out.println("Done merging...");
+        System.out.println(Arrays.deepToString(merged.toArray()));
+        int[][] k = new int[merged.size()][2];
+        return k;
 
-
-        return Arrays.copyOfRange(intervals,left,intervals.length);
+//        return Arrays.copyOfRange(intervals,left,intervals.length);
     }
 
     //"low-level" merge for two intervals
