@@ -9,51 +9,24 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] j = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] j = {1, 2, 3};
         s.subsets(j);
 
     }
 
-    public class RecursiveBitSet{
-        BitSet bs;
-        ArrayList<BitSet> setRepresentations;
-        public RecursiveBitSet(int r) {
-            bs=new BitSet(r);
-            setRepresentations = new ArrayList<BitSet>();
-        }
-        void fill(int k, int n)
-        {
-            if (k == n)
-            {
-//                System.out.println(bs);
-                setRepresentations.add((BitSet)bs.clone());
-//                setRepresentations.add(bs);
-                return;
-            }
-            bs.set(k, false);
-            fill(k+1, n);
-            bs.set(k, true);
-            fill(k+1, n);
-        }
-    }
     public List<List<Integer>> subsets(int[] nums) {
         ArrayList<List<Integer>> subsets = new ArrayList<List<Integer>>();
-        RecursiveBitSet rbs = new RecursiveBitSet(nums.length);
-        rbs.fill(0,nums.length);
-
-        ArrayList<Integer> subset;
-        for(BitSet bs : rbs.setRepresentations) {
-            subset = new ArrayList<Integer>();
-            for(int i=0;i<nums.length;i++) {
-                if(bs.get(i)) subset.add(nums[i]);
+        int n = nums.length;
+        for (int i = (int)Math.pow(2, n); i  < (int)Math.pow(2, n +1); ++i) {
+            String bm = Integer.toBinaryString(i).substring(1);
+            List<Integer> subset = new ArrayList();
+            for(int j = 0; j < n; ++j) {
+                if(bm.charAt(j)=='1') subset.add(nums[j]);
             }
             subsets.add(subset);
-//            System.out.println(bs);
         }
 
-        for(List l : subsets) {
-            System.out.println(Arrays.deepToString(l.toArray()));
-        }
+//        for(List s : subsets) System.out.println(Arrays.deepToString(s.toArray()));
 
         return subsets;
     }
