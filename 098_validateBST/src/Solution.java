@@ -37,9 +37,6 @@ public class Solution {
         Boolean result = true;
         if(node.right != null) result &= parseNode(node.right,node.val, upper);
         if(node.left != null) result &= parseNode(node.left,lower,node.val);
-//        System.out.println(node.val);
         return result;
     }
-
-
 }
