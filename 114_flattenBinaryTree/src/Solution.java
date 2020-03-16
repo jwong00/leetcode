@@ -20,8 +20,24 @@ class Solution {
         t.right.right = new TreeNode(6);
         s.flatten(t);
     }
+    public void flattenOld(TreeNode root) {
+        if(root==null) return;
+        System.out.println(root.val);
+        flatten(root.left);
+        flatten(root.right);
+    }
     public void flatten(TreeNode root) {
         if(root==null) return;
+        flatten(root.left);
+        flatten(root.right);
+        if(root.left==null && root.right==null) return;
+        TreeNode t = root.right;
+        root.right=root.left;
+        root.left=null;
+        for(TreeNode k = root; k!=root.right; k=root.right) {
+
+        }
+
         System.out.println(root.val);
         flatten(root.left);
         flatten(root.right);
