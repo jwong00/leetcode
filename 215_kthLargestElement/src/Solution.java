@@ -21,25 +21,37 @@ class Solution {
 
     public int partition(int[] nums, int lower, int upper) {
 
+        int _lower = lower;
+        int _upper = upper;
+
+        if(_lower>=_upper) return nums[_upper];
+
         //set pivot
-        int pivot_value = nums[upper];
-        int pivot_index = lower; //not index of the above pivot value
+        int pivot_index = lower + ( (upper-lower) / 2 );
+        int pivot_value = nums[pivot_index];
 
         //sort relative to pivot
-        for(int i = lower; i < upper; i++) {
-            if(nums[i] < pivot_value) {
-                //swap nums[i] and nums[pivot_index]
-                int temp = nums[i];
-                nums[i] = nums[pivot_index];
-                nums[pivot_index] = temp;
-                pivot_index++;
+        while(_lower < _upper ) {
+
+            /*
+            * compress the bounds towards the center if the value at
+            * the bounds are on the correct side of the pivot
+            */
+            while(_lower <=_upper && nums[_lower] < pivot_value) _lower++;
+            while(_lower<= _upper && nums[_upper] > pivot_value) _upper--;
+
+            /*
+            * each bound should now be on the wrong side of the pivot,
+            * swap them
+            */
+            if(_lower<=_upper){
+                int temp = nums[_lower];
+                nums[_lower] = nums[_upper];
+                nums[_upper] = temp;
+                _lower++;
+                _upper--;
             }
         }
-
-        //swap pivot to final location
-        int temp = nums[pivot_index];
-        nums[pivot_index] = nums[upper];
-        nums[upper] = temp;
 
         return pivot_index;
     }
