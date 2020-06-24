@@ -1,5 +1,3 @@
-import com.sun.source.tree.Tree;
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -19,27 +17,50 @@ class Solution {
         t.left.right = new TreeNode(4);
         t.right.right = new TreeNode(6);
         s.flatten(t);
+        s.printAsList(t);
     }
     public void flattenOld(TreeNode root) {
         if(root==null) return;
         System.out.println(root.val);
-        flatten(root.left);
-        flatten(root.right);
+        flattenOld(root.left);
+        flattenOld(root.right);
+    }
+    public void printAsList(TreeNode root) {
+        if(root==null) return;
+        System.out.println(root.val);
+        if(root.right!=null) printAsList(root.right);
     }
     public void flatten(TreeNode root) {
         if(root==null) return;
+        /*
+        * Since flatten(left) is called first, left side of any
+        * node is guaranteed to be flat. This assertion will be
+        * useful later.
+        * */
         flatten(root.left);
         flatten(root.right);
-        if(root.left==null && root.right==null) return;
-        TreeNode t = root.right;
-        root.right=root.left;
-        root.left=null;
-        for(TreeNode k = root; k!=root.right; k=root.right) {
 
+        /*
+         * flatten cases
+         *   two children, swap
+         *   right child only, do nothing
+         *   left child only, move entire left tree to right
+         * */
+        if(root.left==null) return;
+        else if(root.right==null) {
+            root.right = root.left;
+            root.left = null;
         }
+        else {
+            TreeNode t = root.right;
+            root.right=root.left;
+            root.left=null;
 
-        System.out.println(root.val);
-        flatten(root.left);
-        flatten(root.right);
+            TreeNode k = root.right;
+            while(k.right!=null) {
+                k=k.right;
+            }
+            k.right=t;
+        }
     }
 }
