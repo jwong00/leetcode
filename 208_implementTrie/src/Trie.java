@@ -8,6 +8,7 @@ class Trie {
         t.insert("apple");
         System.out.println(t.search("apple"));
         System.out.println(t.startsWith("app"));
+        System.out.println(t.search("app"));
 
 
     }
@@ -25,15 +26,17 @@ class Trie {
         Node cur = root;
         int i=0;
 
-        while(cur.index[word.charAt(i)-'A']!=null) {
-            cur=cur.index[word.charAt(i)-'A'];
+        while(cur.index[word.charAt(i)]!=null) {
+            cur=cur.index[word.charAt(i)];
             i++;
         }
         for(;i<word.length();i++) {
 //            System.out.printf("Insert into index %d\n", word.charAt(i)-'A');
-            cur.index[word.charAt(i)-'A'] = new Node(word.charAt(i));
-            cur=cur.index[word.charAt(i)-'A'];
+            cur.index[word.charAt(i)] = new Node(word.charAt(i));
+            cur=cur.index[word.charAt(i)];
         }
+        //terminate the string with a null node
+        cur.index['\0'] = new Node('\0');
     }
 
     /** Returns if the word is in the trie. */
@@ -41,9 +44,10 @@ class Trie {
         Node cur=root;
 
         for(int i=0; i<word.length();i++) {
-            if(cur.index[word.charAt(i)-'A']==null) return false;
-            cur=cur.index[word.charAt(i)-'A'];
+            if(cur.index[word.charAt(i)]==null) return false;
+            cur=cur.index[word.charAt(i)];
         }
+        if(cur.index['\0']==null) return false;
         return true;
     }
 
@@ -52,8 +56,8 @@ class Trie {
         Node cur=root;
 
         for(int i=0; i<prefix.length();i++) {
-            if(cur.index[prefix.charAt(i)-'A']==null) return false;
-            cur=cur.index[prefix.charAt(i)-'A'];
+            if(cur.index[prefix.charAt(i)]==null) return false;
+            cur=cur.index[prefix.charAt(i)];
         }
         return true;
     }

@@ -13,11 +13,11 @@ public class Node {
 
     public Node(char c) {
         this.value = c;
-        index = new Node[Node.index_length];
+        index = new Node['z'];
     }
 
     public Node() {
-        index = new Node[Node.index_length];
+        index = new Node['z'];
     }
 
 }
