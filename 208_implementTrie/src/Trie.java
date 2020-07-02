@@ -2,13 +2,34 @@ class Trie {
 
     Node root;
 
+    private class Node {
+
+        Node[] index;
+        char value;
+
+        public Node(char c) {
+            this.value = c;
+            index = new Node['z'];
+        }
+
+        public Node() {
+            index = new Node['z'];
+        }
+
+    }
+
     public static void main(String[] args) {
 //        System.out.printf("%d %d",(int)'a',(int)'z');
         Trie t = new Trie();
         t.insert("apple");
         System.out.println(t.search("apple"));
-        System.out.println(t.startsWith("app"));
         System.out.println(t.search("app"));
+        System.out.println(t.startsWith("app"));
+        t.insert("app");
+        System.out.println(t.search("app"));
+
+        t.insert("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        System.out.println(t.startsWith("aaaa"));
 
 
     }
@@ -19,22 +40,14 @@ class Trie {
 
     /** Inserts a word into the trie. */
     public void insert(String word) {
-        //foreach char
-        //check if in trie
-        //if TRUE go to next char and next node
-        //if FALSE insert the rest of chars
+//        System.out.printf("Inserting \"%s\"\n",word);
         Node cur = root;
-        int i=0;
 
-        while(cur.index[word.charAt(i)]!=null) {
-            cur=cur.index[word.charAt(i)];
-            i++;
-        }
-        for(;i<word.length();i++) {
-//            System.out.printf("Insert into index %d\n", word.charAt(i)-'A');
-            cur.index[word.charAt(i)] = new Node(word.charAt(i));
+        for(int i=0; i < word.length(); i++) {
+            if(cur.index[word.charAt(i)]==null) cur.index[word.charAt(i)] = new Node(word.charAt(i));
             cur=cur.index[word.charAt(i)];
         }
+
         //terminate the string with a null node
         cur.index['\0'] = new Node('\0');
     }
