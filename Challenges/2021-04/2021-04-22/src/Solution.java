@@ -17,10 +17,6 @@ class Solution {
 
         System.out.println(s.leastBricks(t));
 
-
-
-
-
     }
     public int leastBricks(List<List<Integer>> wall) {
 
