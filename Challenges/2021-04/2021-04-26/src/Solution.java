@@ -1,3 +1,4 @@
+import java.util.PriorityQueue;
 import java.util.TreeSet;
 
 class Solution {
@@ -12,6 +13,29 @@ class Solution {
     }
     public int furthestBuilding(int[] heights, int bricks, int ladders) {
         //max.size()<ladders
+        PriorityQueue<Integer> max = new PriorityQueue<>();
+
+        //store the total number of bricks-sum(max)
+        int remainder=0;
+
+        for(int i=1;i<heights.length;i++) {
+            int t = heights[i]-heights[i-1];
+            if(t<0) continue;
+            max.offer(t);
+
+            if(max.size()>ladders) {
+                remainder+=max.poll();
+                if(remainder>bricks) return i-1;
+            }
+
+            if(remainder>bricks) return i-1;
+        }
+        return heights.length-1;
+    }
+
+
+    public int furthestBuildingBroken(int[] heights, int bricks, int ladders) {
+        //max.size()<ladders
         TreeSet<Integer> max = new TreeSet<>();
 
         //store the total number of bricks-sum(max)
@@ -19,17 +43,16 @@ class Solution {
 
         for(int i=1;i<heights.length;i++) {
             int t = heights[i]-heights[i-1];
-            if(t>=0) {
+            if(t>0) {
                 //there are unused ladders
                 if(max.size()<ladders) max.add(heights[i]-heights[i-1]);
-                //take back a ladder and use
+                    //take back a ladder and use
                 else if(!max.isEmpty() && t>max.first())  {
                     remainder+=max.pollFirst();
                     max.add(t);
                 }
                 //no ladders, use bricks
                 else remainder+=t;
-
             }
             if(remainder>bricks) return i-1;
         }
