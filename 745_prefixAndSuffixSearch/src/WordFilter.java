@@ -14,6 +14,7 @@ class WordFilter {
 
         public Trie() {
             root = new TrieNode();
+            root.weight = -1;
 
         }
         public Trie(String[] dictionary) {
@@ -50,6 +51,7 @@ class WordFilter {
                 for (int i = 0; _w.charAt(i) != '#'; i++) {
                     cur = root;
                     cur.weight=weight;
+                    System.out.println("Adding..."+_w.substring(i));
                     for (int j = i; j < _w.length(); j++) {
                         if (cur.value == null) cur.value = new HashMap<>();
 
@@ -75,18 +77,20 @@ class WordFilter {
 
         public int search(String p, String s) {
             TrieNode cur = root;
-            System.out.println("TEST STATEMENTS");
-            System.out.println(root==null);
-            System.out.println(cur==null);
-            String t = p+"#"+s;
+            String t = s+"#"+p;
 
-            System.out.println("PRE LOOP TEST");
+            System.out.println(t);
+
 
             for(int i=0;i<t.length();i++) {
-                System.out.println(cur==null);
                 char key = t.charAt(i);
-                if(!cur.value.containsKey(key)) return -1;
-                cur = cur.value.get(t);
+//                if(cur==null) break;
+                System.out.println(t.charAt(i));
+                if(!cur.value.containsKey(key)) {
+                    System.out.println("term search");
+                    return -1;
+                }
+                cur = cur.value.get(key);
             }
             return cur.weight;
         }
