@@ -81,17 +81,16 @@ class WordFilter {
 
             System.out.println(t);
 
-
             for(int i=0;i<t.length();i++) {
                 char key = t.charAt(i);
-//                if(cur==null) break;
-                System.out.println(t.charAt(i));
+                System.out.println(key);
                 if(!cur.value.containsKey(key)) {
-                    System.out.println("term search");
+                    System.out.println("Key is: "+key+" Trie result:"+cur.value.containsKey(key));
                     return -1;
                 }
-                cur = cur.value.get(key);
+                cur=cur.value.get(key);
             }
+            System.out.println("HERE!!!! "+cur.weight);
             return cur.weight;
         }
     }
