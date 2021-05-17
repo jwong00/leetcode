@@ -33,7 +33,6 @@ class Solution {
                 chain.put(t,c);
 
                 maxLength = Math.max(maxLength,c);
-                System.out.println();
             }
         }
         return maxLength;
