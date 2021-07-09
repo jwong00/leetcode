@@ -12,25 +12,16 @@ class Solution {
         System.out.println(s.maxProduct(j));
     }
     public int maxProduct(int[] nums) {
-        int left = 0;
-        int right = 1;
-        int max = nums[0]*nums[1];
-        int acc = nums[0];
-        while(right<nums.length) {
-            acc *= nums[right];
-            if(acc >= max) {
-                max = acc;
-                while(acc>max) {
-                    left++;
+        int len = nums.length;
+        int max=nums[0];
 
-                }
+        for(int i=0;i<len;i++) {
+            int acc = 1;
+            for(int j=i;j<len;j++) {
+                acc *= nums[j];
+                max = Math.max(max,acc);
             }
-
-            System.out.println(acc+":"+max);
-            right++;
         }
-
-
 
         return  max;
     }
