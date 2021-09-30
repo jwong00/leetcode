@@ -14,6 +14,7 @@ class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(Arrays.deepToString(s.splitListToParts(MakeList(new int[]{1,2,3,4,5,6,7,8,9,10}),3)));
+        System.out.println(Arrays.deepToString(s.splitListToParts(MakeList(new int[]{1,2,3}),3)));
     }
     public static ListNode MakeList(int[] array) {
         int n = array.length;
@@ -36,7 +37,9 @@ class Solution {
             cur = cur.next;
         }
 
-        int m = (int) Math.ceil((double) n / k);
+//        int m = (int) Math.ceil((double) n / k);
+        int r = n % k;
+        int m = n / k;
 
         ListNode[] ans = new ListNode[k];
         cur = head;
@@ -46,6 +49,11 @@ class Solution {
             ans[i] =  cur;
             for(int j=0;j<m-1 && cur!=null;j++,cur=cur.next) {
 
+            }
+
+            if(r>0 && m >0) {
+                cur=cur.next;
+                r--;
             }
 
             if(cur==null) break;
