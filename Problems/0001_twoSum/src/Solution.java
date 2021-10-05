@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+//import java.util.HashSet;
 
 /**
  * Created by Glamdring on 9/29/2016.
@@ -21,21 +23,14 @@ public class Solution {
     }
 
     public int[] twoSum(int[] nums, int target) {
-        int length=nums.length;
-        int[] answer=new int[2];
-        answer[0]=0;
-        answer[1]=0;
+        HashMap<Integer,Integer> cache = new HashMap<>();
 
-        for(int i=0;i<length;i++) {
-            for(int j=i+1;j<length;j++) {
-                if(nums[i]+nums[j]==target) {
-                    answer[0]=i;
-                    answer[1]=j;
-                    return answer;
-                }
-            }
+        for(int i=0;i<nums.length;i++) {
+            if(cache.containsKey(target-nums[i])) return new int[]{cache.get(target-nums[i]),i};
+            else cache.put(nums[i],i);
         }
+
         //System.out.println("No solution");
-        return answer;
+        return new int[]{};
     }
 }
