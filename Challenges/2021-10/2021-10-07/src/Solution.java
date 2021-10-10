@@ -27,12 +27,18 @@ class Solution {
 
         char c = word.charAt(index);
 
+        char cur = board[row][col];
+        boolean ans = false;
+
         if(board[row][col] == c) {
-            return  bfs(board,word,index+1,row-1,col,h,w) ||
+            board[row][col] = '#';
+            ans =  bfs(board,word,index+1,row-1,col,h,w) ||
                     bfs(board,word,index+1,row,col-1,h,w) ||
                     bfs(board,word,index+1,row+1,col,h,w) ||
                     bfs(board,word,index+1,row,col+1,h,w);
         }
+
+        board[row][col] = cur;
 //        else {
 //
 //            return  bfs(board,word,index,row-1,col,h,w) ||
@@ -41,7 +47,7 @@ class Solution {
 //                    bfs(board,word,index,row,col+1,h,w);
 //        }
 
-        return false;
+        return ans;
 
     }
 }
