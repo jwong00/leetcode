@@ -6,13 +6,9 @@ public class Solution {
     }
 
     public int[] table = new int[1000];
-    public Solution() {
-        table[1]=1;
-        table[2]=2;
-    }
 
     public int climbStairs(int n) {
-        if(n<=2) return table[n];
+        if(n<=2) return n;
         else if(table[n]==0) table[n]=climbStairs(n-1)+climbStairs(n-2);
         return table[n];
     }
