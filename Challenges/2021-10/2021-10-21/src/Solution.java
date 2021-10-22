@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.concurrent.ThreadLocalRandom;
 
 class RandomizedSet {
     HashMap<Integer,Integer> keyVal;
@@ -7,6 +8,7 @@ class RandomizedSet {
     public RandomizedSet() {
         keyVal = new HashMap<>();
         valKey = new HashMap<>();
+
 
     }
 
@@ -24,6 +26,11 @@ class RandomizedSet {
 
     }
 
+    /*
+    * This method should remove the specified value, but also maintain
+    * consistency of the hashmap for the purposes of selecting elements
+    * at random.
+    * */
     public boolean remove(int val) {
         if(!valKey.containsKey(val)) return false;
 
@@ -32,16 +39,41 @@ class RandomizedSet {
 
         //if not last keyed element, rotate
         if(key < size-1) {
+
+            //preserve elements at the "end" of hashmap
             int keyLast = valKey.get(size-1);
             int valLast = keyVal.get(keyLast);
+
+            //remove the last elements
+            keyVal.remove(keyLast);
+            valKey.remove(valLast);
+
+            //remove val
+            keyVal.remove(key);
+            valKey.remove(val);
+
+            //patch the "hole" with the elements from end
+            keyVal.put(key,valLast);
+            valKey.put(valLast,key);
+
+        }
+        else {
+            keyVal.remove(key);
+            valKey.remove(val);
         }
 
-
-
+        return true;
     }
 
+    /*
+    * Returns a random value from the set.
+    *
+    * Does not check to see if set has any elements.
+    * */
     public int getRandom() {
+        int rand = ThreadLocalRandom.current().nextInt(0,keyVal.size());
 
+        return keyVal.get(rand);
     }
 }
 
