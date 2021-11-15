@@ -13,8 +13,9 @@ class Solution {
     public void sortColors(int[] nums) {
         if(nums==null || nums.length==0) return;
 
-        freqsortColors(nums);
-
+//        freqsortColors(nums);
+//        insertionsortColors(nums);
+        mergesortColors(nums,0,nums.length-1);
 
 //        quicksortColors(nums);
     }
@@ -45,8 +46,37 @@ class Solution {
         return false;
     }
 
-    public boolean mergesortColors(int[] nums) {
-        return false;
+    public boolean mergesortColors(int[] nums, int l, int r) {
+        if(l<r) {
+            int m = (l+r)/2;
+            mergesortColors(nums,l,m);
+            mergesortColors(nums,m+1,r);
+            mergeHelper(nums,l,m,r);
+        }
+
+        return true;
+
+    }
+
+    public void mergeHelper(int[] nums,int l, int m, int r) {
+
+        int[] cache = new int[r-l+1];
+        int p1=l, p2=m+1;
+
+        //merge the two sorted sections into cache
+        for(int i=0;i<cache.length;i++) {
+            if(p1<=m && p2<=r) {
+                if(nums[p1]<nums[p2]) cache[i] = nums[p1++];
+                else cache[i] = nums[p2++];
+            }
+            else if(p1<=m) cache[i] = nums[p1++];
+            else cache[i] = nums[p2++];
+        }
+
+        //copy back into nums
+        for(int i=l;i<=r;i++) {
+            nums[i] = cache[i-l];
+        }
     }
 
     public boolean insertionsortColors(int[] nums) {
