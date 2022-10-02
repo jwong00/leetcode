@@ -2,11 +2,17 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 class Solution {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        System.out.println(s.orangesRotting(new int[][] {{2,1,1},{1,1,0},{0,1,1}} ));
+        System.out.println(s.orangesRotting(new int[][] {{2,1,1},{0,1,1},{1,0,1}} ));
+        System.out.println(s.orangesRotting(new int[][] {{0,2}} ));
+
+    }
 
     static final int EMPTY = 0;
     static final int FRESH = 1;
     static final int ROTTEN = 2;
-    static final int VISITED = 3; //implies ROTTEN and already PROCESSED
     static final int[][] directions = {{-1,0},{0,-1},{1,0},{0,1}};
 
     public int orangesRotting(int[][] grid) {
@@ -24,14 +30,12 @@ class Solution {
             for(int j=0;j<n;j++) {
                 if(grid[i][j]==ROTTEN) {
                     if(grid[i][j]==ROTTEN) rotten_idx.offer(new int[]{i,j});
-//                    count_rotten++;
                 }
                 else if(grid[i][j]==FRESH) count_fresh++;
             }
         }
 
         int time = 0;
-//        count_rotten = rotten_idx.size();
 
         //one iteration represents one minute
         while(count_fresh > 0) {
@@ -64,7 +68,13 @@ class Solution {
 
                     //ROT if FRESH then enqueue newly ROTTEN fruit
                     if(grid[x][y]==FRESH) {
+
+                        //time to modify the loop condition
+                        count_fresh--;
+
                         grid[x][y] = ROTTEN;
+
+                        //cache the fruits we rot this minute for processing during the next minute
                         rotten_idx.offer(new int[]{x,y});
                     }
                 }
@@ -72,7 +82,10 @@ class Solution {
             }
 
             //terminate early if number of rotten fruits isn't changing after the minute
-            if(count_rotten==count_rotten_old) return time;
+            if(count_rotten==count_rotten_old) {
+                if(count_fresh>0) return -1;
+                else return time;
+            }
 
             //if not, current number becomes old for next iteration
             //and we increment the number of minutes successfully elapsed
@@ -80,6 +93,7 @@ class Solution {
             time++;
         }
 
+        //returning outside implies all fruits are not ROTTEN
         return time;
     }
 }
