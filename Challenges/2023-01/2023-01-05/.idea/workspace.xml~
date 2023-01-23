@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4ef407f-add5-4cf9-bee3-5e6867609e4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../AmazonOAPrep/0200/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AmazonOAPrep/0215/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AmazonOAPrep/1710/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-10/2022-10-09/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-10/2022-10-09/src/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-10/2022-10-23/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-11/2022-11-12/src/MedianFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-11/2022-11-13/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-11/2022-11-25/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-11/2022-11-26/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-12/2022-12-04/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-12/2022-12-19/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-12/2022-12-30/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2023-01-01/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2023-01-03/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2023-01-04/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Problems/2095_deleteMiddleNode/src/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Problems/2095_deleteMiddleNode/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Problems/2389/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AmazonOAPrep/0692/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../AmazonOAPrep/0692/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2022-10-01/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2022-10-01/src/Solution.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2JuBp8k91p2Fra3yTfmuq8GrHqA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution" />
+      <module name="2023-01-05" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Solution" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4ef407f-add5-4cf9-bee3-5e6867609e4c" name="Default Changelist" comment="" />
+      <created>1672918268254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672918268254</updated>
+    </task>
+    <servers />
+  </component>
+</project>
