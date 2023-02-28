@@ -7,8 +7,10 @@ class Solution {
         System.out.println(s.findJudge(3,new int[][]{{1,3},{2,3}}));
         System.out.println(s.findJudge(3,new int[][]{{1,3},{2,3},{3,1}}));
         System.out.println(s.findJudge(1,new int[][]{}));
+        System.out.println(s.findJudge(3,new int[][]{{1,2}}));
     }
     public int findJudge(int n, int[][] trust) {
+        if(n==1) return 1;
         HashSet<Integer> givesTrust = new HashSet<>();
 
         int[] trustReceived = new int[n+1];
@@ -24,6 +26,6 @@ class Solution {
             if(trustReceived[trust[i][1]] > trustReceived[mostTrustedIndividual]) mostTrustedIndividual = trust[i][1];
         }
 
-        return (!givesTrust.contains(mostTrustedIndividual)) ? mostTrustedIndividual : -1;
+        return (!givesTrust.contains(mostTrustedIndividual) && trustReceived[mostTrustedIndividual]==n-1) ? mostTrustedIndividual : -1;
     }
 }
