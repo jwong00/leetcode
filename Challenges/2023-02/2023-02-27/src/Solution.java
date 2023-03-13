@@ -19,6 +19,9 @@ class Solution {
         //use the return nodes to determine if the current
         //bounded region is also a leaf node
         Node tl = helper(grid,tl_x,tl_y,tl_x+(br_x-tl_x)/2,tl_y+(br_y-tl_y)/2);
+        Node tr = helper(grid,tl_x+(br_x-tl_x)/2,tl_y,br_x,tl_y+(br_y-tl_y)/2);
+        Node bl = helper(grid,tl_x,tl_y+(br_y-tl_y)/2,tl_x+(br_x-tl_x)/2,br_y);
+        Node br = helper(grid,tl_x+(br_x-tl_x)/2,tl_y+(br_y-tl_y)/2,br_x,br_y);
 
 
 
